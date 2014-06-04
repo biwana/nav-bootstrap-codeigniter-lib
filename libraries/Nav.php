@@ -124,8 +124,8 @@ class Nav {
         $ret = array();
 
         foreach ($list as $key => $val) {
-            $val['location'] = isset($val['location']) ? ' '.$val['location'] : $key;
-            $val['label'] = isset($val['label']) ? ' '.$val['label'] : $key;
+            $val['location'] = isset($val['location']) ? $val['location'] : $key;
+            $val['label'] = isset($val['label']) ? $val['label'] : $key;
             $val['class'] = isset($val['class']) ? ' '.$val['class'] : '';
             $val['id'] = isset($val['id']) ? " id='{$val['id']}'" : '';
             
