@@ -130,7 +130,10 @@ class Nav {
             $val['id'] = isset($val['id']) ? " id='{$val['id']}'" : '';
             
             if (isset($val['parent_id'])) {
-                $ret[$val['parent_id']]['children'][$key] = $val;
+                if ( isset($ret[$val['parent_id']])) { 
+                    // if parent doesn't exist, the children wont either
+                    $ret[$val['parent_id']]['children'][$key] = $val;
+                }
             } else {
                 $ret[$key] = $val;
             }
