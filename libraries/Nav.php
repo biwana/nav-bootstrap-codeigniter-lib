@@ -12,8 +12,9 @@ if (!defined('BASEPATH'))
  *
  * @author		Brian Iwana
  * @copyright           Copyright (c) 2014, Brian Iwana.
- * @license		
+ * @license		https://github.com/biwana/nav-bootstrap-codeigniter-lib/blob/master/LICENSE
  * @link		http://www.brianiwana.com
+ * @requires            Bootstrap 3 http://getbootstrap.com/
  */
 // ------------------------------------------------------------------------
 
@@ -33,11 +34,11 @@ class Nav {
 
     // Default configuration
     private $config = array(
-        'ul_class' => 'nav', // classes of the list container
-        'type_class' => 'navbar-nav', //
-        'active_class' => 'active', // active class
-        'ul_id' => NULL, // id of the list container
-        'arrow_class' => 'caret', //class of the dropdown arrow
+        'ul_class' => 'nav',            // classes of the list container
+        'type_class' => 'navbar-nav',   // nav type class, default choices are navbar-nav, nav-pills, nav-tabs
+        'active_class' => 'active',     // class given to the active li
+        'ul_id' => NULL,                // id of the list container
+        'arrow_class' => 'caret',       //class of the dropdown arrow
     );
     protected $active = NULL;
 
