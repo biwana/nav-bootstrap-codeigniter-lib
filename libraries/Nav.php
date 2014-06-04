@@ -56,7 +56,6 @@ class Nav {
     public function __construct($config = array()) {
         $CI = & get_instance();
         $CI->load->helper('url');
-
         $this->initialize($config);
     }
 
@@ -185,7 +184,7 @@ class Nav {
                     $label = $val['label'];
                     $label .= isset($this->config['arrow_class']) ? " <span class='{$this->config['arrow_class']}'></span>" : '';
                     $out .= str_repeat(" ", $depth + 4);
-                    $out .= anchor('#', $label, 'class="dropdown-toggle" data-toggle="dropdown"');
+                    $out .= "<a class='dropdown-toggle' data-toggle='dropdown' href='#'>{$label}</a>"; 
                     $out .= "\n";
                     $out .= $this->_list($val['children'], $active, 'class="dropdown-menu"', $depth + 6);
                 } else {
@@ -195,7 +194,8 @@ class Nav {
                         $class_att = !empty($class) ? " class='{$class}'" : '';
                         $out .= "<li{$val['id']}{$class_att}>";
                     }
-                    $out .= anchor($val['location'], $val['label']);
+                    $base_url = !empty($val['no_base']) ? '' : base_url();
+                    $out .= "<a href='{$base_url}{$val['location']}'>{$val['label']}</a>";
                 }
             }
             $out .= "</li>\n";
