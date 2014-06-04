@@ -23,35 +23,27 @@ Use
 ----
 CodeIgniter Code:
 
-<pre>
-
-$list = array(
-  'home' => array('label' => 'HOME'), // they key is the implied location of the link
-  'about' => array('label' => 'ABOUT', 'location' => 'some-other-location'),
-  'admin' => array('label' => 'ADMIN'),
-  'admin/settings' => array('label' => 'SETTINGS', 'parent_id' => 'admin'),
-);
-$page_id = 'about'; // the active item from the list above 
-
-$this->load->library('nav');
-$this->nav->initialize($config); // optional config file, see full documentation
-$this->nav->render($list, $page_id);
-
-</pre>
+    $list = array(
+      'home' => array('label' => 'HOME'), // they key is the implied location of the link
+      'about' => array('label' => 'ABOUT', 'location' => 'some-other-location'),
+      'admin' => array('label' => 'ADMIN'),
+      'admin/settings' => array('label' => 'SETTINGS', 'parent_id' => 'admin'),
+    );
+    $page_id = 'about'; // the active item from the list above 
+    
+    $this->load->library('nav');
+    $this->nav->initialize($config); // optional config file, see full documentation
+    $this->nav->render($list, $page_id);
 
 Output HTML:
 
-<pre>
-
-<ul class="nav navbar-nav">
-  <li><a href="http://brianiwana.com/home">HOME</a></li>
-  <li><a href="http://brianiwana.com/some-other-location">ABOUT</a></li>
-  <li class='dropdown'>
-    <a href="http://brianiwana.com/#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <span class='caret'></span></a>
-    <ul class="dropdown-menu">
-      <li><a href="http://brianiwana.com/admin/settings">SETTINGS</a></li>
+    <ul class="nav navbar-nav">
+      <li><a href="http://brianiwana.com/home">HOME</a></li>
+      <li><a href="http://brianiwana.com/some-other-location">ABOUT</a></li>
+      <li class='dropdown'>
+        <a href="http://brianiwana.com/#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <span class='caret'></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://brianiwana.com/admin/settings">SETTINGS</a></li>
+        </ul>
+      </li>
     </ul>
-  </li>
-</ul>
-
-</pre>
