@@ -23,6 +23,7 @@ Use
 ----
 CodeIgniter Code:
 
+<code>
 $list = array(
   'home' => array('label' => 'HOME'), // they key is the implied location of the link
   'about' => array('label' => 'ABOUT', 'location' => 'some-other-location'),
@@ -34,9 +35,11 @@ $page_id = 'about'; // the active item from the list above
 $this->load->library('nav');
 $this->nav->initialize($config); // optional config file, see full documentation
 $this->nav->render($list, $page_id);
+</code>
 
 Output HTML:
 
+<code>
 <ul class="nav navbar-nav">
   <li><a href="http://brianiwana.com/home">HOME</a></li>
   <li><a href="http://brianiwana.com/some-other-location">ABOUT</a></li>
@@ -47,3 +50,4 @@ Output HTML:
     </ul>
   </li>
 </ul>
+</code>
